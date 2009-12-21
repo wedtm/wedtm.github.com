@@ -2,6 +2,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load("jquery", "1.3");
+    google.setOnLoadCallback(function() {
+    });
+  </script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>WedTM</title>
 	<style type="text/css" media="screen">
@@ -12,12 +18,11 @@
     #header #name {margin-left:15px; font-size:60px;}
     #header #gravatar {border:5px solid #ACACAC; }
     #content {margin: 40px;}
-    .block {border: 3px solid #ACACAC; background-color:#FFFFFF; padding:15px;}
-    .block .heading {background-color:#FFFFFF; font-size: 24px; padding:15px; width:350px; overflow:hidden;
-       font-family: Helvetica, sans-serif; border:3px solid #ACACAC; border-bottom: none;margin-top:-61px;
-       margin-bottom:15px;}
-    .block a {text-decoration: none;}
-    .block a:hover {text-decoration: none;}
+    .block .heading {background-color:#FFFFFF; font-size: 12px; padding:15px; width:350px; overflow:hidden;
+       font-family: Helvetica, sans-serif; border:3px solid #ACACAC; border-bottom: none; margin-bottom:-5px; margin-left:15px;}
+    .block .content {border: 3px solid #ACACAC; background-color:#FFFFFF; padding:15px; margin-top:0px;}
+    .block .content a {text-decoration: none;}
+    .block .content a:hover {text-decoration: none;}
     
 	</style>
 </head>
@@ -28,11 +33,15 @@
     </div>
   <div id="content">
     <div class="block">
-    <h1 class="heading">Here's how you can find me...</h1>
-    Twitter: <a href="http://twitter.com/wedtm/">http://twitter.com/wedtm</a><br />
-    Github:  <a href="http://github.com/wedtm/">http://github.com/wedtm</a><br />
-    Last.FM: <a href="http://last.fm/user/wedtm">http://last.fm/user/wedtm</a><br />
-    Ohloh:   <a href="http://ohloh.net/accounts/wedtm">http://ohloh.net/accounts/wedtm</a><br />
+      <div class="heading">
+        <h1 click="$('#b1').slideToggle();">Here's how you can find me...</h1>
+      </div>
+      <div class="content" id="b1">
+        Twitter: <a href="http://twitter.com/wedtm/">http://twitter.com/wedtm</a><br />
+        Github:  <a href="http://github.com/wedtm/">http://github.com/wedtm</a><br />
+        Last.FM: <a href="http://last.fm/user/wedtm">http://last.fm/user/wedtm</a><br />
+        Ohloh:   <a href="http://ohloh.net/accounts/wedtm">http://ohloh.net/accounts/wedtm</a><br />
+      </div>
     </div>
   </div>
 </body>
