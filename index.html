@@ -6,23 +6,34 @@
 	<title>WedTM</title>
 	<style type="text/css" media="screen">
 	  * {margin: 0px; padding: 0px;}
-    body{background:#FCFCFC;font-size:1.3em;font-family:"Hybrea",Helvetica,sans-serif;}
+    body{background:#CFCFCF;font-size:1.3em;font-family:"Hybrea",Helvetica,sans-serif;}
     @font-face { font-family: "Hybrea"; src:local("Hybrea"), url("hybrea.otf") format("opentype"); }
-    #content {margin: 40px; border: 2px solid #DDDDDD; background-color:#FFFFFF; }
-    #content h1 {font-family: Helvetica, sans-serif;}
-    #content a {text-decoration: none;}
-    #content a:hover {text-decoration: none;}
+    #header {margin-left: 40px; padding: 15px; }
+    #header #name {margin-left:15px; font-size:60px;}
+    #header #gravatar {border:5px solid #ACACAC; }
+    #content {margin: 40px;}
+    .block {border: 3px solid #ACACAC; background-color:#FFFFFF; padding:15px;}
+    .block .heading {background-color:#FFFFFF; font-size: 24px; padding:15px; width:350px; overflow:hidden;
+       font-family: Helvetica, sans-serif; border:3px solid #ACACAC; border-bottom: none;margin-top:-61px;
+       margin-bottom:15px;}
+    .block a {text-decoration: none;}
+    .block a:hover {text-decoration: none;}
     
 	</style>
 </head>
 
 <body>
+  <div id="header">
+    <img id ="gravatar" src="http://www.gravatar.com/avatar/cce6dedd189d53eea48e6121bb9a0383?s=160" /><span id="name">Miles Smith (WedTM)</span>
+    </div>
   <div id="content">
-    <h1>Here's how you can find me...</h1>
+    <div class="block">
+    <h1 class="heading">Here's how you can find me...</h1>
     Twitter: <a href="http://twitter.com/wedtm/">http://twitter.com/wedtm</a><br />
     Github:  <a href="http://github.com/wedtm/">http://github.com/wedtm</a><br />
     Last.FM: <a href="http://last.fm/user/wedtm">http://last.fm/user/wedtm</a><br />
     Ohloh:   <a href="http://ohloh.net/accounts/wedtm">http://ohloh.net/accounts/wedtm</a><br />
     </div>
+  </div>
 </body>
 </html>
