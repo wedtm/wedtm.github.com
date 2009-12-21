@@ -7,6 +7,19 @@
     google.load("jquery", "1.3");
     google.setOnLoadCallback(function() {
     });
+    
+    function SwitchImage(el) {
+      var element = $(el);
+      var img;
+      if(element.is(":visible")) {
+        img = "images/Grey_DOWN.png";
+      }
+      else {
+        img = "images/Grey_UP.png";
+      }
+      element.parent().find(".heading img").attr("src", img);
+      element.slideToggle();
+    }
   </script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<title>WedTM</title>
@@ -17,10 +30,13 @@
     #header {margin-left: 40px; padding: 15px; }
     #header #name {margin-left:15px; font-size:60px;}
     #header #gravatar {border:5px solid #ACACAC; }
-    #content {margin: 40px;}
-    .block .heading {background-color:#FFFFFF; font-size: 12px; padding:15px; width:350px; overflow:hidden;
-       font-family: Helvetica, sans-serif; border:3px solid #ACACAC; border-bottom: none; margin-bottom:-5px; margin-left:15px;}
-    .block .content {border: 3px solid #ACACAC; background-color:#FFFFFF; padding:15px; margin-top:0px;}
+    #content {margin: 40px; margin-top:10px; padding-left:15px;}
+    .block {position:relative;}
+    .block .heading {background-color:#FFFFFF; font-size: 12px; padding:15px; width:450px;
+       font-family: Helvetica, sans-serif; border:3px solid #ACACAC; margin-bottom:-3px; margin-left:0px; position:relative;}
+    .block .heading h1 {display:inline;}
+    .block .heading img {right:5px; position:absolute;}
+    .block .content {border: 3px solid #ACACAC; background-color:#FFFFFF; padding:15px; margin-top:0px; display:none; margin-bottom:15px;}
     .block .content a {text-decoration: none;}
     .block .content a:hover {text-decoration: none;}
     
@@ -32,17 +48,42 @@
     <img id ="gravatar" src="http://www.gravatar.com/avatar/cce6dedd189d53eea48e6121bb9a0383?s=160" /><span id="name">Miles Smith (WedTM)</span>
     </div>
   <div id="content">
-    <div class="block">
+    <div id="b1" class="block">
       <div class="heading">
-        <h1 click="$('#b1').slideToggle();">Here's how you can find me...</h1>
+        <h1>Here's how you can find me...</h1>
+        <img src="images/Grey_DOWN.png" width="25px" onclick="SwitchImage('#b1 .content')" />
       </div>
-      <div class="content" id="b1">
+      <div class="content">
         Twitter: <a href="http://twitter.com/wedtm/">http://twitter.com/wedtm</a><br />
         Github:  <a href="http://github.com/wedtm/">http://github.com/wedtm</a><br />
         Last.FM: <a href="http://last.fm/user/wedtm">http://last.fm/user/wedtm</a><br />
         Ohloh:   <a href="http://ohloh.net/accounts/wedtm">http://ohloh.net/accounts/wedtm</a><br />
       </div>
     </div>
+    <div id="b2" class="block">
+      <div class="heading">
+        <h1>Projects I'm involved in...</h1>
+        <img src="images/Grey_DOWN.png" width="25px" onclick="SwitchImage('#b2 .content')" />
+      </div>
+      <div class="content">
+        Nisme:    <a href="http://wedtm.com/nisme/">http://wedtm.com/nisme/</a><br />
+        GEP 5.0:  <a href="http://appcon.net/">http://appcon.net/</a><br />
+        Too.tl:   <a href="http://too.tl/">http://too.tl</a><br />
+      </div>
+    </div>
+    <div id="b3" class="block">
+      <div class="heading">
+        <h1>Products I Use...</h1>
+        <img src="images/Grey_DOWN.png" width="25px" onclick="SwitchImage('#b3 .content')" />
+      </div>
+      <div class="content">
+        Lighthouse:    <a href="http://lighthouseapp.com/">http://lighthouseapp.com/</a><br />
+        Github:        <a href="http://github.com/wedtm/">http://github.com/</a><br />
+        Ruby on Rails: <a href="http://rubyonrails.org/">http://rubyonrails.org</a><br />
+        jQuery:        <a href="http://jquery.com/">http://jquery.com/</a><br />
+      </div>
+    </div>
   </div>
+  <script src="js/jquery.jtwitter.js" language="text/javascript"></script>
 </body>
 </html>
