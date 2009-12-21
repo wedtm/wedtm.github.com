@@ -25,7 +25,8 @@
       var url = "http://twitter.com/status/user_timeline/wedtm.json?count=1&callback=?";
       $.getJSON(url, function(data) {
         var post = data[0];
-        tweet.text(post.text);
+        var img = " <img onclick='GetTweet()' src='images/Grey_REFRESH.png' width='20px'/>";
+        tweet.html(img + post.text);
       });
     }
   </script>
@@ -40,7 +41,8 @@
     #header #gravatar {border:5px solid #ACACAC; }
     #content {margin: 40px; margin-top:10px; padding-left:15px;}
     #tweet {border:3px solid #ACACAC; background-color:#DFDFDF;font-style:italic; color:#ACACAC; 
-      font-family:"Arial", sans-serif;font-size:10px;padding:5px;width:auto;}
+      font-family:"Arial", sans-serif;font-size:10px;padding:5px;width:auto; display:inline;}
+    #tweet img {vertical-align:middle;}
     .block {position:relative;}
     .block .heading {background-color:#FFFFFF; font-size: 12px; padding:15px; width:450px;
        font-family: Helvetica, sans-serif; border:3px solid #ACACAC; margin-bottom:-3px; margin-left:0px; position:relative;}
@@ -56,7 +58,7 @@
 
 <body>
   <div id="header">
-    <img id ="gravatar" src="http://www.gravatar.com/avatar/cce6dedd189d53eea48e6121bb9a0383?s=160" /><span id="name">Miles Smith (WedTM)</span>
+    <img id ="gravatar" src="http://www.gravatar.com/avatar/cce6dedd189d53eea48e6121bb9a0383?s=160" /><span id="name">Miles Smith (WedTM)</span><br />
     <div id="tweet">Getting Data...</div>
     </div>
   <div id="content">
