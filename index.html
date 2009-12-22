@@ -11,13 +11,21 @@
       var element = $(el);
       var img;
       if(element.is(":visible")) {
+        // Going UP!
         img = "images/Grey_DOWN.png";
+        element.parent().find(".heading img").attr("src", img);
+        element.slideUp(1500, function() {
+         element.parent().find(".heading").animate({width: "450px"}, 1500); 
+        });
       }
       else {
+        // Coming down!
         img = "images/Grey_UP.png";
+        element.parent().find(".heading img").attr("src", img);
+        element.parent().find(".heading").animate({width: "100%"}, 1500, function() {
+          element.slideDown(1500);
+        });
       }
-      element.parent().find(".heading img").attr("src", img);
-      element.slideToggle();
     }
     
     function GetTweet() {
@@ -37,17 +45,19 @@
     body{background:#CFCFCF;font-size:1.3em;font-family:"Hybrea",Helvetica,sans-serif;}
     @font-face { font-family: "Hybrea"; src:local("Hybrea"), url("hybrea.otf") format("opentype"); }
     #header {margin-left: 40px; padding: 15px; }
-    #header #name {margin-left:15px; font-size:60px;}
+    #header #name {margin-left:15px; margin-right:-15px; font-size:60px;}
     #header #gravatar {border:5px solid #ACACAC; }
     #content {margin: 40px; margin-top:10px; padding-left:15px;}
     #tweet {border:3px solid #ACACAC; background-color:#DFDFDF;font-style:italic; color:#ACACAC; 
       font-family:"Arial", sans-serif;font-size:10px;padding:5px;width:auto; display:inline;}
     #tweet img {vertical-align:middle;}
+    #tweet img:hover {cursor:pointer;}
     .block {position:relative;}
     .block .heading {background-color:#FFFFFF; font-size: 12px; padding:15px; width:450px;
        font-family: Helvetica, sans-serif; border:3px solid #ACACAC; margin-bottom:-3px; margin-left:0px; position:relative;}
     .block .heading h1 {display:inline;}
     .block .heading img {right:5px; position:absolute;}
+    .block .heading img:hover {cursor:pointer;}
     .block .content {border: 3px solid #ACACAC; background-color:#FFFFFF; padding:15px; margin-top:0px; display:none; margin-bottom:15px;}
     .block .content a {text-decoration: none;}
     .block .content a:hover {text-decoration: none;}
