@@ -14,16 +14,16 @@
         // Going UP!
         img = "images/Grey_DOWN.png";
         element.parent().find(".heading img").attr("src", img);
-        element.slideUp(1500, function() {
-         element.parent().find(".heading").animate({width: "450px"}, 1500); 
+        element.slideUp("normal", function() {
+         element.parent().find(".heading").animate({width: "450px"}); 
         });
       }
       else {
         // Coming down!
         img = "images/Grey_UP.png";
         element.parent().find(".heading img").attr("src", img);
-        element.parent().find(".heading").animate({width: "100%"}, 1500, function() {
-          element.slideDown(1500);
+        element.parent().find(".heading").animate({width: "100%"}, function() {
+          element.slideDown();
         });
       }
     }
@@ -48,17 +48,21 @@
     #header #name {margin-left:15px; margin-right:-15px; font-size:60px;}
     #header #gravatar {border:5px solid #ACACAC; }
     #content {margin: 40px; margin-top:10px; padding-left:15px;}
-    #tweet {border:3px solid #ACACAC; background-color:#DFDFDF;font-style:italic; color:#ACACAC; 
+    #tweet {border:3px solid #ACACAC; background-color:#DFDFDF;font-style:italic; color:#9C9C9C; 
       font-family:"Arial", sans-serif;font-size:10px;padding:5px;width:auto; display:inline;}
     #tweet img {vertical-align:middle;}
     #tweet img:hover {cursor:pointer;}
+    #footer {text-align:center;font-style:italic; color:#9C9C9C;font-family:"Arial", sans-serif;font-size:10px;
+      padding:5px;width:auto; display:inline;}
+    #footer a {text-decoration:none;color:inherit;}
+    #footer a:hover {text-decoration:underline;}
     .block {position:relative;}
-    .block .heading {background-color:#FFFFFF; font-size: 12px; padding:15px; width:450px;
+    .block .heading {background-color:#FFFFFF; font-size: 12px; padding:15px 0 15px 15px; width:100%;
        font-family: Helvetica, sans-serif; border:3px solid #ACACAC; margin-bottom:-3px; margin-left:0px; position:relative;}
     .block .heading h1 {display:inline;}
     .block .heading img {right:5px; position:absolute;}
     .block .heading img:hover {cursor:pointer;}
-    .block .content {border: 3px solid #ACACAC; background-color:#FFFFFF; padding:15px; margin-top:0px; display:none; margin-bottom:15px;}
+    .block .content {border: 3px solid #ACACAC; background-color:#FFFFFF; padding:15px; margin-top:0px; margin-bottom:15px;}
     .block .content a {text-decoration: none;}
     .block .content a:hover {text-decoration: none;}
     
@@ -75,7 +79,7 @@
     <div id="b1" class="block">
       <div class="heading">
         <h1>Here's how you can find me...</h1>
-        <img src="images/Grey_DOWN.png" width="25px" onclick="SwitchImage('#b1 .content')" />
+        <img src="images/Grey_UP.png" width="25px" onclick="SwitchImage('#b1 .content')" />
       </div>
       <div class="content">
         Twitter: <a href="http://twitter.com/wedtm/">http://twitter.com/wedtm</a><br />
@@ -87,7 +91,7 @@
     <div id="b2" class="block">
       <div class="heading">
         <h1>Projects I'm involved in...</h1>
-        <img src="images/Grey_DOWN.png" width="25px" onclick="SwitchImage('#b2 .content')" />
+        <img src="images/Grey_UP.png" width="25px" onclick="SwitchImage('#b2 .content')" />
       </div>
       <div class="content">
         Nisme:    <a href="http://wedtm.com/nisme/">http://wedtm.com/nisme/</a><br />
@@ -97,8 +101,8 @@
     </div>
     <div id="b3" class="block">
       <div class="heading">
-        <h1>Products I Use...</h1>
-        <img src="images/Grey_DOWN.png" width="25px" onclick="SwitchImage('#b3 .content')" />
+        <h1>Products I use...</h1>
+        <img src="images/Grey_UP.png" width="25px" onclick="SwitchImage('#b3 .content')" />
       </div>
       <div class="content">
         Lighthouse:    <a href="http://lighthouseapp.com/">http://lighthouseapp.com/</a><br />
@@ -107,6 +111,7 @@
         jQuery:        <a href="http://jquery.com/">http://jquery.com/</a><br />
       </div>
     </div>
+    <div id="footer"><p>WedTM is Miles Smith, you can find out more at <a href="http://wedtm.com/">wedtm.com</a>.</p></div>
   </div>
   <script type="text/javascript">
   GetTweet();
