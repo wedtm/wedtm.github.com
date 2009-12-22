@@ -57,12 +57,13 @@
     #footer a {text-decoration:none;color:inherit;}
     #footer a:hover {text-decoration:underline;}
     .block {position:relative;}
-    .block .heading {background-color:#FFFFFF; font-size: 12px; padding:15px 0 15px 15px; width:100%;
+    .block .heading {background-color:#FFFFFF; font-size: 12px; padding:15px 0 15px 15px; width:450px;
        font-family: Helvetica, sans-serif; border:3px solid #ACACAC; margin-bottom:-3px; margin-left:0px; position:relative;}
+    .block .heading:hover {cursor:pointer;}
     .block .heading h1 {display:inline;}
     .block .heading img {right:5px; position:absolute;}
     .block .heading img:hover {cursor:pointer;}
-    .block .content {border: 3px solid #ACACAC; background-color:#FFFFFF; padding:15px; margin-top:0px; margin-bottom:15px;}
+    .block .content {border: 3px solid #ACACAC; background-color:#FFFFFF; padding:15px; display:none; margin-top:0px; margin-bottom:15px;}
     .block .content a {text-decoration: none;}
     .block .content a:hover {text-decoration: none;}
     
@@ -77,9 +78,9 @@
     </div>
   <div id="content">
     <div id="b1" class="block">
-      <div class="heading">
+      <div class="heading" onclick="SwitchImage('#b1 .content')">
         <h1>Here's how you can find me...</h1>
-        <img src="images/Grey_UP.png" width="25px" onclick="SwitchImage('#b1 .content')" />
+        <img src="images/Grey_DOWN.png" width="25px"/>
       </div>
       <div class="content">
         Twitter: <a href="http://twitter.com/wedtm/">http://twitter.com/wedtm</a><br />
@@ -89,9 +90,9 @@
       </div>
     </div>
     <div id="b2" class="block">
-      <div class="heading">
+      <div class="heading" onclick="SwitchImage('#b2 .content')">
         <h1>Projects I'm involved in...</h1>
-        <img src="images/Grey_UP.png" width="25px" onclick="SwitchImage('#b2 .content')" />
+        <img src="images/Grey_DOWN.png" width="25px"/>
       </div>
       <div class="content">
         Nisme:    <a href="http://wedtm.com/nisme/">http://wedtm.com/nisme/</a><br />
@@ -100,9 +101,9 @@
       </div>
     </div>
     <div id="b3" class="block">
-      <div class="heading">
+      <div class="heading" onclick="SwitchImage('#b3 .content')">
         <h1>Products I use...</h1>
-        <img src="images/Grey_UP.png" width="25px" onclick="SwitchImage('#b3 .content')" />
+        <img src="images/Grey_DOWN.png" width="25px"/>
       </div>
       <div class="content">
         Lighthouse:    <a href="http://lighthouseapp.com/">http://lighthouseapp.com/</a><br />
